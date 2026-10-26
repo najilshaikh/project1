@@ -16,4 +16,3 @@ picturesfolder= Path.home() / "Pictures"
 for item in downfolder.iterdir():
     if item.suffix.lower() in img_types:
         item.rename(picturesfolder / item.name)
-    
