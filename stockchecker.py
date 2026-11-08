@@ -1,5 +1,9 @@
 import warnings
 import yfinance as yf
+from telegram import Update
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+token = 'TOKEN'
+
 #silence all warnings matching the "inplace" warning message pattern
 warnings.filterwarnings("ignore",message=".*inplace.*")
 #catcha and suppress everyrthing explicitly raised under the Pandas4Warning namespace
@@ -17,7 +21,7 @@ try:
         print(f"Error: {user_input} is not a valid stock")
     else:
         print(f"The current value of {user_input} is: ${current_price:.2f}")
-except exception as e:
+except Exception as e:
     print(f"Error: Could not fetch data for {user_input}, please confirm your symbol is correct.")
 except ConnectionError as ce:
-    print(f"there has been a connection error: {ce}")
+    print(f"there has been a connection rror: {ce}")

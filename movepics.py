@@ -10,7 +10,7 @@
 #                 shutil.shul
 
 from pathlib import Path
-img_types = {".jpeg",".jpg",".png"}
+img_types = {".jpeg",".jpg",".png", ".arw"}
 downfolder= Path.home() / "Downloads"
 picturesfolder= Path.home() / "Pictures"
 for item in downfolder.iterdir():
