@@ -2,17 +2,19 @@ import asyncio
 import json
 import os
 import warnings
-
+from dotenv import load_dotenv
 import yfinance as yf
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes, filters
 
 warnings.filterwarnings("ignore", message=".*inplace.*")
 
+load_dotenv(os.path.expanduser("~/projects/tradingbot/.env"))
+
 TOKEN = os.environ['TOKEN']
 OWNER_ID = int(os.environ['OWNER_ID'])# your numeric Telegram user ID
 CHECK_INTERVAL = 120  # seconds
-SAVE_FILE = os.path.expanduser("~/scripts/watchlist.json")
+SAVE_FILE = os.path.expanduser("~/projects/tradingbot/watchlist.json")
 
 # {"NVDA": {"target": 130.0, "alerted": False}}
 watchlist = {}
