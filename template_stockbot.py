@@ -9,8 +9,8 @@ from telegram.ext import Application, CommandHandler, ContextTypes, filters
 
 warnings.filterwarnings("ignore", message=".*inplace.*")
 
-TOKEN = "9011138586:AAHxOsMmXxqT4gMMhCoQOHQ0kgKF_Qdvw3A"
-OWNER_ID = 9289995404  # your numeric Telegram user ID
+TOKEN = os.environ['TOKEN']
+OWNER_ID = int(os.environ['OWNER_ID'])# your numeric Telegram user ID
 CHECK_INTERVAL = 120  # seconds
 SAVE_FILE = os.path.expanduser("~/scripts/watchlist.json")
 
